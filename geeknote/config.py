@@ -62,7 +62,7 @@ NOTE_URL = "https://%domain%/Home.action?#n=%s"
 
 # Date format
 DEF_DATE_FORMAT = "%Y-%m-%d"
-DEF_DATE_AND_TIME_FORMAT = "%Y-%m-%d %H:%M:%S"
+DEF_DATE_AND_TIME_FORMAT = "%Y-%m-%d %H:%M"
 DEF_DATE_RANGE_DELIMITER = "/"
 
 # validate config

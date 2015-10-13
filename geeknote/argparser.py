@@ -55,15 +55,23 @@ COMMANDS_DICT = {
             "--tags":       {"altName": "-tg",
                              "help": "One tag or the list of tags which"
                                      " will be added to the note."},
+            "--created":    {"altName": "-cr",
+                             "help": "Set creation time in 'yyyy-mm-dd'"
+                                     " or 'yyyy-mm-dd HH:MM' format."},
             "--resource":   {"altName": "-rs",
                              "help": "Add a resource to the note.",
                              "repetitive": True},
             "--notebook":   {"altName": "-nb",
                              "help": "Set the notebook where to save note."},
             "--reminder":   {"altName": "-r",
-                             "help": "Set reminder date and time(dd.mm.yyy-HH:MM). "
-                             "Alternatively use TOMORROW and WEEK for 24 hours and a week ahead respectively, "
-                             "NONE for a reminder without a time. Use DONE to mark a reminder as completed."},
+                             "help": "Set reminder date and time in 'yyyy-mm-dd'"
+                                     " or 'yyyy-mm-dd HH:MM' format."
+                                     "\n             Alternatively use TOMORROW "
+                                     "and WEEK for 24 hours and a week ahead "
+                                     "respectively,"
+                                     "\n             NONE for a reminder "
+                                     "without a time. Use DONE to mark a "
+                                     "reminder as completed."},
         },
         "flags": {
             "--raw":        {"altName": "-r",
@@ -78,7 +86,8 @@ COMMANDS_DICT = {
         "arguments": {
             "--note":       {"altName": "-n",
                              "help": "The name or ID from the "
-                                     "previous search of a note to edit."},
+                                     "previous search of a note to edit.",
+                                     "required": True},
             "--title":      {"altName": "-t",
                              "help": "Set new title of the note."},
             "--content":    {"altName": "-c",
@@ -88,13 +97,22 @@ COMMANDS_DICT = {
                              "repetitive": True},
             "--tags":       {"altName": "-tg",
                              "help": "Set new list o tags for the note."},
+            "--created":    {"altName": "-cr",
+                             "help": "Set creation time in 'yyyy-mm-dd'"
+                                     " or 'yyyy-mm-dd HH:MM' format."},
             "--notebook":   {"altName": "-nb",
                              "help": "Assign new notebook for the note."},
             "--reminder":   {"altName": "-r",
-                             "help": "Set reminder date and time(dd.mm.yyy-HH:MM). "
-                             "Alternatively use TOMORROW and WEEK for 24 hours and a week ahead respectively, "
-                             "NONE for a reminder without a time. Use DONE to mark a reminder as completed. "
-                             "Use DELETE to remove reminder from a note."},
+                             "help": "Set reminder date and time in 'yyyy-mm-dd'"
+                                     " or 'yyyy-mm-dd HH:MM' format."
+                                     "\n             Alternatively use TOMORROW "
+                                     "and WEEK for 24 hours and a week ahead "
+                                     "respectively,"
+                                     "\n             NONE for a reminder "
+                                     "without a time. Use DONE to mark a "
+                                     "reminder as completed."
+                                     "\n             Use DELETE to remove "
+                                     "reminder from a note."},
         },
         "flags": {
             "--raw":        {"altName": "-r",
@@ -109,7 +127,8 @@ COMMANDS_DICT = {
         "arguments": {
             "--note":  {"altName": "-n",
                         "help": "The name or ID from the previous "
-                                "search of a note to remove."},
+                                "search of a note to remove.",
+                                "required": True},
         },
         "flags": {
             "--force": {"altName": "-f",
@@ -124,7 +143,8 @@ COMMANDS_DICT = {
         "arguments": {
             "--note": {"altName": "-n",
                        "help": "The name or ID from the previous "
-                               "search of a note to show."},
+                               "search of a note to show.",
+                               "required": True},
         },
         "flags": {
             "--raw": {"altName": "-w",
