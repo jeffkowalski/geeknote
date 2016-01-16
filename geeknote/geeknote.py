@@ -582,7 +582,7 @@ class User(GeekNoteConnector):
                         'App dir: %s' % config.APP_DIR,
                         'Error log: %s' % config.ERROR_LOG,
                         'Current editor: %s' % editor,
-                        'Markdown2 Extras: %s' % extras if extras is None else ','.join(extras),
+                        'Markdown2 Extras: %s' % (extras if extras is None else ','.join(extras)),
                         'Note extension: %s' % note_ext)
 
             user_settings = storage.getUserprops()
