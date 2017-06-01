@@ -21,7 +21,7 @@ You can install Geeknote using [Homebrew](http://brew.sh/)/[Linuxbrew](https://g
 ##### Homebrew installation
 
 ``` sh
-brew install --HEAD https://raw.githubusercontent.com/jeffkowalski/geeknote/master/geeknote.rb
+brew install --HEAD geeknote
 ```
 
 ##### Downloading and installing from source
