@@ -157,7 +157,12 @@ class Editor(object):
 #       content = html2text.html2text(soup.prettify())
 #       content = html2text.html2text(str(soup))
 #       content = html2text.html2text(unicode(soup))
-        content = html2text.html2text(str(soup).decode('utf-8'), '')
+#       content = h.html2text(str(soup).decode('utf-8'), '')
+
+        # Prevent undesired line breaks
+        h = html2text.HTML2Text()
+        h.body_width = 0
+        content = h.handle(str(soup).decode('utf-8'))
 
         content = re.sub(r' *\n', os.linesep, content)
         content = content.replace(unichr(160), " ")
@@ -238,6 +243,11 @@ class Editor(object):
             if format == 'markdown':
                 storage = Storage()
                 extras = storage.getUserprop('markdown2_extras')
+
+                # markdown for links of type [http://someurl.com](http://someurl.com)
+                # can be expressed as <http://someurl.com>, so we have to tell the 
+                # markdown processor to handle it like such.
+                content = re.sub(r'(?:<)(http[^>]+)>', r'[\1](\1)', content)
 
                 if not rawmd:
                     content = Editor.HTMLEscapeTag(content)
