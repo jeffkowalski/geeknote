@@ -206,9 +206,19 @@ class GeekNote(object):
 
             import getpass
             token = getpass.getpass("If you have an Evernote developer token, "
-                                    "enter it here: ")
+                                    "enter it here: ").strip()
             if token:
                 self.authToken = token
+                # few user would read the source code and moidfy setting in config.py
+                # so I add this option to make it friendly.
+                if raw_input("Which service? [1]Evernote Global [2]Yinxiang China:  ") == "2":
+                    # yinxiang
+                    config.USER_BASE_URL = "app.yinxiang.com"
+                else:
+                    config.USER_BASE_URL = "www.evernote.com"
+
+                self.userStoreUri = "https://{0}/edam/user".format(config.USER_BASE_URL)
+
             else:
                 logging.error("No token service and no dev token.")
                 return False

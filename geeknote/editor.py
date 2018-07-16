@@ -213,7 +213,9 @@ class Editor(object):
             content = ""
         try:
             content = unicode(content, "utf-8")
-            content = re.sub(r'\r\n', '\n', content)
+            # add 2 space before new line in paragraph for creating br tags
+            content = re.sub(r'([^\r\n])([\r\n])([^\r\n])', r'\1  \n\3', content)
+            # content = re.sub(r'\r\n', '\n', content)
 
             if format == 'pre':
                 # For the 'pre' format, simply wrap the content with a 'pre' tag.
