@@ -389,7 +389,11 @@ class GNSync:
                     "imagesInSubdir" in self.imageOptions
                     and self.imageOptions["imagesInSubdir"]
                 ):
-                    os.mkdir(os.path.join(self.path, escaped_title + "_images"))
+                    try:
+                        os.mkdir(os.path.join(self.path, escaped_title + "_images"))
+                    except OSError:
+                        # Folder already exists
+                        pass
                     imagePath = os.path.join(
                         self.path, escaped_title + "_images", escaped_title
                     )
