@@ -630,7 +630,7 @@ class GeekNote(object):
         )
         if resource == None:
             return False
-        open(filename, "w").write(resource.data.body)
+        open(filename, "w").write(str(resource.data.body))
         return True
 
 
