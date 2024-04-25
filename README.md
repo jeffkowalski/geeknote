@@ -1,3 +1,8 @@
+Archived
+===
+I no longer maintain this repository.  If you've come here looking for bug fixes, please check one of the more recently updated forks to see if they are more recently maintained.
+
+
 Important Note
 ===
 This is an updated version of geeknote for Python 3 using evernote-sdk-python3 (which is also in beta). Even though things are not throughly tested, basic functionality works.
