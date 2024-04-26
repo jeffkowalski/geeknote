@@ -42,6 +42,9 @@ def strip(data):
     if not data:
         return data
 
+    if isinstance(data, bytes):
+        data = data.decode('utf-8')
+
     if isinstance(data, dict):
         items = iter(data.items())
         return dict([[key.strip(" \t\n\r\"'"), val] for key, val in items])

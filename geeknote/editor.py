@@ -55,7 +55,7 @@ class Editor(object):
         Creates a list of image resources to save.
         Each has a hash and extension attribute.
         """
-        soup = BeautifulSoup(contentENML.decode("utf-8"), features='lxml')
+        soup = BeautifulSoup(contentENML, features='lxml')
         imageList = []
         for section in soup.findAll("en-media"):
             if "type" in section.attrs and "hash" in section.attrs:
